@@ -5,11 +5,11 @@ class ItemCreate(BaseModel):
     quantity: int
     category: str  
 
-class ItemResponse(BaseModel):
-    id: int
-    name: str
-    quantity: int
-    category: str
+class ItemResponse(ItemBase):
+    pass
+
+class ItemResponse(ItemBase):
+    id: int 
 
     class Config:
         orm_mode = True     
