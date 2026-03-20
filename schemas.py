@@ -1,15 +1,15 @@
 from pydantic import BaseModel 
 
-class ItemCreate(BaseModel):
+class ItemBase(BaseModel):
     name: str
     quantity: int
     category: str  
 
-class ItemResponse(ItemBase):
+class ItemCreate(ItemBase):
     pass
 
 class ItemResponse(ItemBase):
     id: int 
 
     class Config:
-        orm_mode = True     
+        from_attributes = True     
